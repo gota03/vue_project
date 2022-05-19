@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto sistema com VUE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="css/estilo.css">
-    
+  
 </head>
 
 <body>
@@ -89,7 +90,7 @@
 
         <!-- MENSAGEM DE BOAS VINDAS -->
 
-        <section class="p-3 my-3 bg-primary shadow">
+        <section class="p-3 my-4 bg-primary shadow">
         
             <div class="container-fluid py-3 text-center">
 
@@ -101,11 +102,47 @@
 
         <!-- HOME -->
 
-        <section class="p-2 my-4 shadow col-md-10 mx-auto">
+        <section class="p-2 my-5 shadow col-md-10 mx-auto">
 
             <div class="container-fluid py-3 text-center">
 
                 <p class="fw-bold fs-3">Para começar, escolha umas das funções do menu</p>
+
+            </div>
+
+        </section>
+
+        <!-- FUNCIONALIDADE 1: IDADE -->
+
+        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+
+            <div class="container-fluid py-5 text-center">
+
+                <form action="">
+
+                    <div class="d-flex align-items-center">
+                        
+                        <span class="material-symbols-outlined fs-1 me-2">
+
+                            event
+
+                        </span>
+
+                        <input type="number" class="form-control form-control-lg" placeholder="Digite o ano do seu nascimento com 4 dígitos " min="1900" max="2050" required>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-2">
+
+                        <button type="submit" class="btn btn-lg btn-primary">
+
+                            Calcular idade
+
+                        </button>
+
+                    </div>
+
+                </form>
 
             </div>
 
