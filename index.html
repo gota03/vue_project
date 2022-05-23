@@ -132,7 +132,7 @@
 
                     </div>
 
-                    <div class="d-flex justify-content-end mt-2">
+                    <div class="d-flex justify-content-end mt-3">
 
                         <button type="submit" class="btn btn-lg btn-primary">
 
@@ -208,8 +208,104 @@
 
         </section>
 
+        <!-- FUNCIONALIDADE 3: VERIFICAR DIA DA SEMANA -->
+
+        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+
+            <div class="container-fluid py-5 text-center">
+
+                <form action="">
+
+                    <div class="d-flex align-items-center">
+                        
+                        <span class="material-symbols-outlined fs-1 me-2">
+
+                            date_range
+
+                        </span>
+
+                        <input type="date" class="form-control form-control-lg" placeholder="Informe uma data" id="diaSemana" data-bs-placement="top" title="Informe uma data qualquer" required>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-3">
+
+                        <button type="submit" class="btn btn-lg btn-primary">
+
+                            Calcular dia da semana
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- FUNCIONALIDADE 4: CALCULAR DESCONTO -->
+
+        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+
+            <div class="container-fluid py-5 text-center">
+
+                <form action="">
+
+                    <section class="row">
+                        
+                        <div class="col-md-6 d-flex align-items-center">
+
+                            <span class="material-symbols-outlined fs-1 me-2">
+
+                                sell
+
+                            </span>
+
+                            <input type="text" class="form-control form-control-lg" placeholder="Informe o valor">
+
+                        </div>
+                            
+                        <div class="col-md-6 d-flex align-items-center">
+
+                            <span class="material-symbols-outlined fs-1 me-2">
+
+                                percent
+
+                            </span>
+
+                            <input type="text" class="form-control form-control-lg" placeholder="Qual a porcentagem do desconto?">
+
+                        </div>
+
+                    </section>
+
+                    <div class="d-flex justify-content-end mt-3">
+
+                        <button type="submit" class="btn btn-lg btn-primary">
+
+                            Calcular desconto
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
     </main>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+
+        const diaSemana = document.querySelector("#diaSemana")
+        const tooltip = new bootstrap.Tooltip(diaSemana)
+
+    </script>
+
 </body>
 </html>
