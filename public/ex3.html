@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex vue 3</title>
+
+</head>
+<body>
+
+    <section id="app">
+
+        <form action="">
+
+            <input type="text" name="" id="" v-model="digitado">
+            <p>{{digitado}}</p>
+
+        </form>
+
+    </section>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+
+        const app = Vue.createApp({
+            data(){
+                return{
+                    digitado: ""
+                }
+                
+            }
+        })
+        app.mount("#app")
+
+    </script>
+
+</body>
+</html>
