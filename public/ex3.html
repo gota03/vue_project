@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex vue 3</title>
+    <style>
+        img{width:300px;}
+    </style>
 
 </head>
+
 <body>
 
     <section id="app">
@@ -14,9 +18,32 @@
         <form action="">
 
             <input type="text" name="" id="" v-model="digitado">
+
             <p>{{digitado}}</p>
 
         </form>
+
+        <!-- A DIRETIVA V-IF, V-ELSE-IF E V-ELSE SERVEM PARA EXIBIR INFORMAÇÕES CONDICIONAIS -->
+
+        <section v-if="digitado==1">
+
+            <img v-bind:src="img1" alt="">
+
+        </section>
+
+        <section v-else-if="digitado==2">
+
+            <img v-bind:src="img2" alt="">
+
+        </section>
+
+        <section v-else-if="digitado==3">
+
+            <img v-bind:src="img3" alt="">
+
+        </section>
+
+        <p v-else>Por favor, informe um valor entre 1 e 3 para escolher uma imagem</p>
 
     </section>
 
@@ -27,9 +54,11 @@
         const app = Vue.createApp({
             data(){
                 return{
-                    digitado: ""
+                    digitado: "",
+                    img1: "imagens/imagem1.webp",
+                    img2: "imagens/imagem2.jpg",
+                    img3: "imagens/imagem3.jpg"
                 }
-                
             }
         })
         app.mount("#app")
