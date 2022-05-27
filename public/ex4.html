@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 4 vue</title>
+    
+</head>
+
+<body>
+
+    <section id="app">
+
+        <div v-for="itens in imagem">
+
+            <img v-bind:src="itens" alt="" style="width:200px;">
+
+        </div>
+        
+        <hr>
+
+        <p v-for="item in frutas">{{item}}</p>
+
+        <hr>
+
+        <p v-for="elementos in eletrodomesticos">{{elementos}}</p>
+
+    </section>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+
+        const app = Vue.createApp({
+            data(){
+                return{
+                    imagem: [
+                        "imagens/imagem1.webp",
+                        "imagens/imagem2.jpg",
+                        "imagens/imagem3.jpg"
+                    ],
+                    frutas: [
+                        "uva",
+                        "maracuja",
+                        "cupuaçu",
+                        "limão"
+                    ],
+                    eletrodomesticos:[
+                        "geladeira",
+                        "fogão",
+                        "micro ondas",
+                        "cafeteira"
+                    ]
+                }
+            }
+        })
+        app.mount("#app")
+
+    </script>
+
+</body>
+</html>
