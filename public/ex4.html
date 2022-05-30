@@ -20,11 +20,43 @@
         
         <hr>
 
-        <p v-for="item in frutas">{{item}}</p>
+        <p v-for="(item, indice) in frutas">
+
+            {{indice}} {{item}}
+
+        </p>
 
         <hr>
 
-        <p v-for="elementos in eletrodomesticos">{{elementos}}</p>
+        <p v-for="(elementos, indice) in eletrodomesticos">
+
+            {{indice}} {{elementos}}
+
+        </p>
+        
+        <hr>
+
+        <p v-for="(valor,chave,indice) in pessoa">
+
+            {{indice}} - {{chave}}: {{valor}}
+
+        </p>
+
+        <hr>
+
+        <p v-for="itens in carros">
+
+          {{itens.marca}}: {{itens.modelo}}
+
+        </p>
+
+        <hr>
+
+        <p v-for="cont in 10">
+
+            {{cont}}
+
+        </p>
 
     </section>
 
@@ -51,6 +83,19 @@
                         "fogão",
                         "micro ondas",
                         "cafeteira"
+                    ],
+                    //OBJETO
+                    pessoa:{
+                        nome: "mateus",
+                        idade: 30,
+                        endereco: "avenida xesj",
+                        sexo: "masculino"
+                    },
+                    // VETOR DE OBJETOS
+                    carros: [
+                        {marca: "Porsche", modelo: "911" },
+                        {marca: "Fiat", modelo:"Pálio"},
+                        {marca: "Volkswagen", modelo: "Gol g6"}
                     ]
                 }
             }
