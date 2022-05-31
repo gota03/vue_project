@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ex 5 com VUE</title>
+
 </head>
 <body>
 
@@ -15,11 +17,13 @@
 
             <input type="text" v-model="produto">
 
-            <button v-on:click="adicionarProdutos()">Inserir produtos</button>
+            <button v-on:click.prevent="adicionarProduto()">Inserir produtos</button>
+
+            <button @click.prevent="removerProduto()">Remover item</button>
 
             <ul>
 
-                <li></li>
+                <li v-for="item in lista"> {{item}} </li>
 
             </ul>
 
@@ -39,8 +43,17 @@
                 }
             },
             methods:{
-                adicionarProdutos(){
-                    alert("Produto adicionado")
+                adicionarProduto(){
+                    if(this.produto==""){
+                        alert("É preciso adicionar pelo menos um produto")
+                    }
+                    else{
+                        this.lista.push(this.produto) // ADICIONANDO ELEMENTOS NO VETOR
+                        this.produto = "" // LIMPAR O CAMPO INPUT 
+                    }
+                },
+                removerProduto(){
+                    this.lista.pop() // REMOVE O ULTIMO ITEM DO VETOR
                 }
             }
         })
