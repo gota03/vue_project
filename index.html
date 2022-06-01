@@ -12,7 +12,7 @@
   
 </head>
 
-<body>
+<body id="app">
 
     <header class="sticky-top">
 
@@ -46,25 +46,27 @@
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link">Calcular idade</a>
+                                <!-- $EVENT PERMITE ACESSAR O EVENTO ORIGINAL DO DOM DE FORMA QUE EU CONSIGA MANIPULAR TODO O CONTEUDO DO ELEMENTO -->
+
+                                <a href="" class="nav-link idade" v-on:click.prevent="verificarLink($event.target.classList)">Calcular idade</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link">Calcular câmbio</a>
+                                <a href="" class="nav-link cambio">Calcular câmbio</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link">Verificar dia da semana</a>
+                                <a href="" class="nav-link diaSemana">Verificar dia da semana</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link">Calcular desconto</a>
+                                <a href="" class="nav-link desconto">Calcular desconto</a>
 
                             </li>
 
@@ -102,7 +104,7 @@
 
         <!-- HOME -->
 
-        <section class="p-2 my-5 shadow col-md-10 mx-auto">
+        <section v-if="bloco.inicio" class="p-2 my-5 shadow col-md-10 mx-auto">
 
             <div class="container-fluid py-3 text-center">
 
@@ -114,7 +116,7 @@
 
         <!-- FUNCIONALIDADE 1: IDADE -->
 
-        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+        <section v-if="bloco.idade" class="p-5 my-5 col-md-10 shadow mx-auto">
 
             <div class="container-fluid py-5 text-center">
 
@@ -150,7 +152,7 @@
 
         <!-- FUNCIONALIDADE 2: CÂMBIO  -->
 
-        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+        <section v-if="bloco.cambio" class="p-5 my-5 col-md-10 shadow mx-auto">
 
             <div class="container-fluid py-5 text-center">
 
@@ -210,7 +212,7 @@
 
         <!-- FUNCIONALIDADE 3: VERIFICAR DIA DA SEMANA -->
 
-        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+        <section v-if="bloco.diaSemana" class="p-5 my-5 col-md-10 shadow mx-auto">
 
             <div class="container-fluid py-5 text-center">
 
@@ -246,7 +248,7 @@
 
         <!-- FUNCIONALIDADE 4: CALCULAR DESCONTO -->
 
-        <section class="p-5 my-5 col-md-10 shadow mx-auto">
+        <section v-if="bloco.desconto" class="p-5 my-5 col-md-10 shadow mx-auto">
 
             <div class="container-fluid py-5 text-center">
 
@@ -352,7 +354,11 @@
 
     </section>
     
+    <script src="https://unpkg.com/vue@3"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
 
     <script>
 
