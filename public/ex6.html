@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 6 com VUE</title>
+    <style>
+        *{margin:0; padding:0;}
+        .escuro{background-color: #101010; color:#f6efe8}
+        .claro{background-color: #f6efe8 ; color:#101010;}
+        .escuro, .claro{font-family: arial; height: 100vh;}
+    </style>
+
+</head>
+<body>
+
+    <section id="app">
+
+        <section class="">
+
+            <input type="checkbox" id="tema" v-on:change="mudarTema()">
+
+            <label for="tema">Mudar tema</label>
+
+            <p>
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque vitae deleniti laboriosam recusandae provident officiis est cum. Aspernatur voluptates, ratione ut nisi suscipit libero rem commodi voluptate modi incidunt minus!
+                Amet explicabo qui itaque at placeat vitae deserunt. Omnis accusantium sed reprehenderit sit dolores dolore eum? Consectetur voluptatem voluptatum eius eaque aliquam atque, nemo odio provident nam deleniti pariatur eligendi.
+                Dicta tempore repellat facere laborum nulla aspernatur blanditiis neque maxime ad. Impedit commodi atque provident adipisci eligendi, aperiam neque assumenda dolores maxime soluta aut vitae illum, praesentium quae! Repudiandae, quia?
+                Possimus ipsa, alias quisquam fugiat dolorum nostrum est, tempore ex maiores doloribus enim illum vel veritatis necessitatibus veniam temporibus itaque error rem sed voluptatum modi. Unde blanditiis dolor accusantium sint!
+                Porro aut doloribus, atque natus quasi sit repellendus voluptate dolorem eius aliquam blanditiis soluta officiis quo deserunt impedit cum non nisi placeat provident ullam alias laboriosam voluptas ratione! Deleniti, aspernatur!
+
+            </p>
+
+        </section>
+
+    </section>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+
+        const app = Vue.createApp({
+            data(){
+                return{
+                    escolha: true
+                }
+            },
+            methods:{
+                mudarTema(){
+                   this.escolha = !this.escolha // ESTOU TROCANDO OS VALORES TRUE E FALSE UTILIZANDO O OPERADOR DE NEGAÇÃO PRA ISSO
+                   console.log(this.escolha)
+                }
+            }
+        })
+        app.mount("#app")
+
+    </script>
+
+</body>
+</html>
