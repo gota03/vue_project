@@ -17,7 +17,9 @@
 
     <section id="app">
 
-        <section class="">
+        <!-- QUANDO FAZEMOS UM BIND NA CLASS, TEMOS QUE COLOCAR A CLASSE CSS DO LADO ESQUERDO E UMA VARIÁVEL QUE SERÁ TESTADA(VERDADEIRO OU FALSO) DO LADO DIREITO -->
+
+        <section v-bind:class="[escolha?'claro':'escuro']"> 
 
             <input type="checkbox" id="tema" v-on:change="mudarTema()">
 
