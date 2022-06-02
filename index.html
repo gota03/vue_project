@@ -54,19 +54,19 @@
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link cambio">Calcular câmbio</a>
+                                <a href="" class="nav-link cambio" v-on:click.prevent="verificarLink($event.target.classList)">Calcular câmbio</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link diaSemana">Verificar dia da semana</a>
+                                <a href="" class="nav-link diaSemana" v-on:click.prevent="verificarLink($event.target.classList)">Verificar dia da semana</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link desconto">Calcular desconto</a>
+                                <a href="" class="nav-link desconto" v-on:click.prevent="verificarLink($event.target.classList)">Calcular desconto</a>
 
                             </li>
 
@@ -96,7 +96,7 @@
         
             <div class="container-fluid py-3 text-center">
 
-                <h2 class="display-6 fw-bold text-light">Olá, seja bem vindo ao nosso sistema</h2>
+                <h2 class="display-6 fw-bold text-light"> {{textoInicial}} </h2>
 
             </div>
 
