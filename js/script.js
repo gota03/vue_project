@@ -14,17 +14,19 @@ const App = Vue.createApp({
                 diaSemana: "Exibir o dia da semana a partir de uma data inserida pelo usuário",
                 desconto: "Calcular  o  resultado  a  partir  de  um  valor  base  e  o percentual de desconto indicados pelo usuário"
             },
-            textoInicial: "Olá, seja bem vindo ao nosso sistema"
+            textoInicial: "Olá, seja bem vindo ao nosso sistema",
+            campoIdade:""
+            
         }
     },
     methods:{
         verificarLink(classe){
-            console.log([classe[1]])
+            //console.log([classe[1]])
             let itens = classe[1] // CLASSE É UM PARAMETRO QUE IRA CONTER UM VETOR COM AS CLASSES DA TAG NA QUAL A FUNÇÃO ESTA SENDO CHAMADA
             for(elementos in this.bloco){ // FOR IN PERMITE PERCORRER UM OBJETO
-                console.log(elementos)
+                //console.log(elementos)
                 if(itens == elementos){
-                    console.log(`Voce clicou em ${elementos}`)
+                    //console.log(`Voce clicou em ${elementos}`)
                     this.bloco[elementos] = true
                     this.textoInicial = this.mensagem[elementos]
                 }
@@ -32,6 +34,11 @@ const App = Vue.createApp({
                     this.bloco[elementos] = false
                 }
             }
+        },
+        calcularIdade(){
+            let anoAtual = new Date().getFullYear() // ESTOU PEGANDO O ANO ATUAL
+            let resposta = anoAtual - this.campoIdade
+            console.log(resposta)
         }
     }
 })

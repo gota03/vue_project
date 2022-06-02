@@ -130,13 +130,13 @@
 
                         </span>
 
-                        <input type="number" class="form-control form-control-lg" placeholder="Digite o ano do seu nascimento com 4 dígitos " min="1900" max="2050" required>
+                        <input type="number" class="form-control form-control-lg" placeholder="Digite o ano do seu nascimento com 4 dígitos " min="1900" max="2050" required v-model="campoIdade">
 
                     </div>
 
                     <div class="d-flex justify-content-end mt-3">
 
-                        <button type="submit" class="btn btn-lg btn-primary">
+                        <button type="submit" class="btn btn-lg btn-primary" v-on:click.prevent="calcularIdade()">
 
                             Calcular idade
 
