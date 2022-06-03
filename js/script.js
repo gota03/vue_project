@@ -15,7 +15,12 @@ const App = Vue.createApp({
                 desconto: "Calcular  o  resultado  a  partir  de  um  valor  base  e  o percentual de desconto indicados pelo usuário"
             },
             textoInicial: "Olá, seja bem vindo ao nosso sistema",
-            campoIdade:""
+            campoIdade:"",
+            resultado: "",
+            info: "",
+            dolar: "",
+            cotacao: ""
+
             
         }
     },
@@ -37,8 +42,34 @@ const App = Vue.createApp({
         },
         calcularIdade(){
             let anoAtual = new Date().getFullYear() // ESTOU PEGANDO O ANO ATUAL
-            let resposta = anoAtual - this.campoIdade
-            console.log(resposta)
+            if(this.validaIdade()){
+                let resposta = anoAtual - this.campoIdade
+                this.resultado = `Você possui ${resposta} anos`
+            }
+        },
+        validaIdade(){
+            if(this.campoIdade<1900 || this.campoIdade>2050){
+                this.info = "Você precisa informar um ano entre 1900 e 2050"
+                this.resultado = "" // IRA RETIRAR A MENSAGEM DO CALCULO DA IDADE
+                return false // SIGNIFICA QUE O USUARIO INSERIU UM VALOR ERRADO
+            }
+            else{
+                this.info = ""
+                return true // SIGNIFICA QUE O USUARIO INSERIU UM VALOR CORRETO
+            }
+        },
+        converterDolar(){
+            let padrao = /^[0-9]+(\.([0-9]{2}))?$/
+            if(padrao.test(this.dolar) && padrao.test(this.cotacao)){
+                let resposta = this.dolar * this.cotacao
+                this.resultado = `U$${this.dolar} convertidos em real é R$${resposta}`
+                this.info = "" // RETIRANDO A MENSAGEM DE ERRO
+            }
+            else{
+                this.info = "Informe apenas numeros inteiros ou separados por ponto com 2 casas decimais"
+                this.resultado = "" // RETIRANDO A MENSAGEM DE ERRO
+                
+            }
         }
     }
 })
