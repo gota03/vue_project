@@ -21,7 +21,9 @@ const App = Vue.createApp({
             dolar: "",
             cotacao: "",
             data: "",
-            statusTooltip: false // PARA VERIFICAR SE O TOOLTIP FOI ATIVADO
+            statusTooltip: false, // PARA VERIFICAR SE O TOOLTIP FOI ATIVADO
+            qntDolar: "",
+            desconto: ""
         }
     },
     methods:{
@@ -90,6 +92,18 @@ const App = Vue.createApp({
                 this.statusTooltip = true
             }
             
+        },
+        calcularDesconto(){
+            let regex = /^[0-9]+(\.([0-9]{2}))?$/
+            if(regex.test(this.qntDolar) && regex.test(this.desconto)){
+                let conta = this.qntDolar * (this.desconto/100)
+                this.resultado = `O valor do desconto é ${conta}`
+                this.info = ""
+            }
+            else{
+                this.info = "Informe apenas numeros inteiros ou separados por ponto com 2 casas decimais"
+                this.resultado = ""
+            }
         }
     }
 })
