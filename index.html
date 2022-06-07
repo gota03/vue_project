@@ -48,25 +48,25 @@
 
                                 <!-- $EVENT PERMITE ACESSAR O EVENTO ORIGINAL DO DOM DE FORMA QUE EU CONSIGA MANIPULAR TODO O CONTEUDO DO ELEMENTO -->
 
-                                <a href="" class="nav-link idade" v-on:click.prevent="verificarLink($event.target.classList)">Calcular idade</a>
+                                <a href="" class="nav-link idade" v-on:click.prevent="verificarLink($event.target.classList)" :class="{ativo:bloco.idade}" data-bs-dismiss="offcanvas">Calcular idade</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link cambio" v-on:click.prevent="verificarLink($event.target.classList)">Calcular câmbio</a>
+                                <a href="" class="nav-link cambio" v-on:click.prevent="verificarLink($event.target.classList)" :class="{ativo:bloco.cambio}" data-bs-dismiss="offcanvas">Calcular câmbio</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link diaSemana" v-on:click.prevent="verificarLink($event.target.classList)">Verificar dia da semana</a>
+                                <a href="" class="nav-link diaSemana" v-on:click.prevent="verificarLink($event.target.classList)" :class="{ativo:bloco.diaSemana}" data-bs-dismiss="offcanvas">Verificar dia da semana</a>
 
                             </li>
 
                             <li class="nav-item">
 
-                                <a href="" class="nav-link desconto" v-on:click.prevent="verificarLink($event.target.classList)">Calcular desconto</a>
+                                <a href="" class="nav-link desconto" v-on:click.prevent="verificarLink($event.target.classList)" :class="{ativo:bloco.desconto}" data-bs-dismiss="offcanvas">Calcular desconto</a>
 
                             </li>
 
@@ -312,7 +312,7 @@
 
                             </span>
 
-                            <input type="text" class="form-control form-control-lg" placeholder="Informe o valor" pattern="^[0-9]+(\.([0-9]{2}))?$" title="Informe apenas números inteiros ou separados por ponto com 2 casas decimais" required v-model="qntDolar">
+                            <input type="text" class="form-control form-control-lg" placeholder="Informe o valor" pattern="^[0-9]+(\.([0-9]{2}))?$" title="Informe apenas números inteiros ou separados por ponto com 2 casas decimais" required v-model="qntDinheiro">
 
                         </div>
                             

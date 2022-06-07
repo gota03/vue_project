@@ -22,7 +22,7 @@ const App = Vue.createApp({
             cotacao: "",
             data: "",
             statusTooltip: false, // PARA VERIFICAR SE O TOOLTIP FOI ATIVADO
-            qntDolar: "",
+            qntDinheiro: "",
             desconto: ""
         }
     },
@@ -36,6 +36,8 @@ const App = Vue.createApp({
                     //console.log(`Voce clicou em ${elementos}`)
                     this.bloco[elementos] = true
                     this.textoInicial = this.mensagem[elementos]
+                    this.resultado = "" // RESETANDO AS INFORMAÇÔES
+                    this.info = ""
                 }
                 else{
                     this.bloco[elementos] = false
@@ -95,9 +97,9 @@ const App = Vue.createApp({
         },
         calcularDesconto(){
             let regex = /^[0-9]+(\.([0-9]{2}))?$/
-            if(regex.test(this.qntDolar) && regex.test(this.desconto)){
-                let conta = this.qntDolar * (this.desconto/100)
-                this.resultado = `O valor do desconto é ${conta}`
+            if(regex.test(this.qntDinheiro) && regex.test(this.desconto)){
+                let conta = this.qntDinheiro * (this.desconto/100)
+                this.resultado = `O valor do desconto é R$${conta.toFixed(2)}`
                 this.info = ""
             }
             else{
