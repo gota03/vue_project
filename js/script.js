@@ -23,7 +23,20 @@ const App = Vue.createApp({
             data: "",
             statusTooltip: false, // PARA VERIFICAR SE O TOOLTIP FOI ATIVADO
             qntDinheiro: "",
-            desconto: ""
+            desconto: "",
+            dolarOnline: "",
+            cotacaoOnline: "" // ESSA VARIAVEL SERA UM AUXILIAR
+        }
+    },
+    async mounted(){
+        const url = "https://economia.awesomeapi.com.br/json/last/USD-BRL"
+        try {
+            const resposta = await axios.get(url)
+            let dados = resposta.data
+            this.cotacaoOnline = dados.USDBRL.high
+            console.log(dados.USDBRL.high)
+        } catch (error) {
+            console.log("o seguinte erro ocorreu: ", error)
         }
     },
     methods:{
@@ -66,7 +79,7 @@ const App = Vue.createApp({
             let padrao = /^[0-9]+(\.([0-9]{2}))?$/
             if(padrao.test(this.dolar) && padrao.test(this.cotacao)){
                 let resposta = this.dolar * this.cotacao
-                this.resultado = `U$${this.dolar} convertidos em real é R$${resposta}`
+                this.resultado = `U$${this.dolar} convertidos em real é R$${resposta.toFixed(2)}`
                 this.info = "" // RETIRANDO A MENSAGEM DE ERRO
             }
             else{
@@ -106,6 +119,14 @@ const App = Vue.createApp({
                 this.info = "Informe apenas numeros inteiros ou separados por ponto com 2 casas decimais"
                 this.resultado = ""
             }
+        },
+        atualizarCotacao(){
+           if(this.dolarOnline){
+            this.cotacao = Number(this.cotacaoOnline).toFixed(2) // ESTAMOS CONVERTENDO STRING PARA NUMBER PARA UTILIZAR A FUNÇÃO TO.FIXED()
+           }
+           else{
+               this.cotacao = "" 
+           }
         }
     }
 })

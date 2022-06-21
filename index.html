@@ -154,7 +154,7 @@
 
                     </div>
 
-                    <p class="lead text-start">
+                    <p class="lead text-start mt-3">
 
                         {{resultado}}
 
@@ -204,7 +204,7 @@
 
                     <div class="form-check form-switch d-flex w-200 justify-content-around mt-4">
 
-                        <input type="checkbox" id="switch" class="form-check-input">
+                        <input type="checkbox" id="switch" class="form-check-input" v-model="dolarOnline" v-on:change="atualizarCotacao()">
 
                         <label for="switch" class="form-check-label">Usar cotação online</label>
 
@@ -230,7 +230,7 @@
 
                     </div>
 
-                    <p class="lead text-start">
+                    <p class="lead text-start mt-3">
 
                         {{resultado}}
 
@@ -282,7 +282,7 @@
 
                     </div>
 
-                    <p class="lead text-start">
+                    <p class="lead text-start mt-3">
 
                         {{resultado}}
 
@@ -350,7 +350,7 @@
 
                         </div>
 
-                        <p class="lead text-start">
+                        <p class="lead text-start mt-3">
 
                             {{resultado}}
     
@@ -418,6 +418,8 @@
 
     </section>
     
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="https://unpkg.com/vue@3"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
